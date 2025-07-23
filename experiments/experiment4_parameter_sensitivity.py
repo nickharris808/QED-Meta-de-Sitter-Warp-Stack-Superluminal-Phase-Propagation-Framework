@@ -197,13 +197,34 @@ def run_experiment():
     print(f"\n🔍 SENSITIVITY ANALYSIS:")
     sensitivities = sensitivity_analysis(base_params, param_list)
     
-    # Convert to ps and sort by absolute value
+    # Convert to normalized sensitivities (% change in output per % change in input)
+    normalized_sensitivities = {}
+    baseline_advance_sec = baseline_advance * 1e-12  # Convert ps back to seconds
+    
+    for param in param_list:
+        # Calculate: (% change in arrival time) / (% change in parameter)
+        baseline_val = base_params[param]
+        if baseline_val != 0 and baseline_advance_sec != 0:
+            # Sensitivity is d(arrival_sec)/d(param)
+            # We want: (% change in arrival) per (% change in param)
+            # = (d(arrival)/arrival) / (d(param)/param) = (d(arrival)/d(param)) * (param/arrival)
+            normalized_sens = sensitivities[param] * baseline_val / baseline_advance_sec * 100
+            normalized_sensitivities[param] = normalized_sens
+        else:
+            normalized_sensitivities[param] = 0
+    
+    # Convert raw sensitivities to ps and sort by absolute value
     sens_ps = {k: v * 1e12 for k, v in sensitivities.items()}
     sorted_sens = sorted(sens_ps.items(), key=lambda x: abs(x[1]), reverse=True)
     
     print(f"   Parameter sensitivities (ps per unit change):")
     for param, sens_val in sorted_sens:
         print(f"   {param_labels[param]:18s}: {sens_val:+.2e} ps/unit")
+    
+    print(f"\n   Normalized sensitivities (% change per % parameter change):")
+    sorted_norm_sens = sorted(normalized_sensitivities.items(), key=lambda x: abs(x[1]), reverse=True)
+    for param, norm_sens in sorted_norm_sens:
+        print(f"   {param_labels[param]:18s}: {norm_sens:+6.1f}%")
     
     # Relative importance analysis
     total_abs_sens = sum(abs(v) for v in sens_ps.values())
@@ -246,25 +267,27 @@ def run_experiment():
     # Create comprehensive visualization
     fig = plt.figure(figsize=(15, 10))
     
-    # Plot 1: Tornado chart (sensitivities)
+    # Plot 1: Tornado chart (normalized sensitivities)
     ax1 = plt.subplot(2, 3, 1)
-    labels = [param_labels[k] for k, v in sorted_sens]
-    values = [v for k, v in sorted_sens]
+    # Sort normalized sensitivities by absolute value
+    sorted_norm_sens = sorted(normalized_sensitivities.items(), key=lambda x: abs(x[1]), reverse=True)
+    labels = [param_labels[k] for k, v in sorted_norm_sens]
+    values = [v for k, v in sorted_norm_sens]
     colors = ['red' if v < 0 else 'blue' for v in values]
     
     bars = ax1.barh(range(len(labels)), values, color=colors, alpha=0.7)
     ax1.set_yticks(range(len(labels)))
     ax1.set_yticklabels(labels)
-    ax1.set_xlabel('Sensitivity (ps per unit parameter)')
+    ax1.set_xlabel('Normalized Sensitivity (% change per % parameter change)')
     ax1.set_title('Parameter Sensitivity Tornado Chart')
     ax1.grid(True, alpha=0.3, axis='x')
     
     # Add value labels
     for i, (bar, value) in enumerate(zip(bars, values)):
         width = bar.get_width()
-        ax1.text(width + np.sign(width) * 0.02 * max(np.abs(values)), 
+        ax1.text(width + np.sign(width) * 0.02 * max(np.abs(values)) if len(values) > 0 else 0, 
                 bar.get_y() + bar.get_height()/2, 
-                f'{value:.1e}', ha='left' if width > 0 else 'right', va='center', fontsize=8)
+                f'{value:.1f}%', ha='left' if width > 0 else 'right', va='center', fontsize=8)
     
     # Plot 2: Relative importance pie chart
     ax2 = plt.subplot(2, 3, 2)

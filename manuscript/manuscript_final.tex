@@ -134,7 +134,7 @@ The metamaterial lens exploits the plasma frequency dependence of the dielectric
 
 where $\omega_p = \sqrt{n_e e^2/(\epsilon_0 m_e)}$ is the plasma frequency and $\gamma$ represents collision damping. For our operational parameters ($\lambda = 3$ $\mu$m, $n_e = 3.5 \times 10^{27}$ m$^{-3}$), this yields $\epsilon < 0$ and hence $n = \sqrt{\epsilon} < 0$ throughout the lens volume.
 
-The required electron density represents a 3.5× enhancement above current laboratory records but remains within the theoretical capabilities of ultrashort pulse laser-plasma interactions. Recent experiments have achieved densities approaching $10^{27}$ m$^{-3}$ in small volumes~\cite{Li2010}, suggesting scalability to the required lens dimensions through advanced plasma confinement techniques.
+The required electron density represents a 3.5$\times$ enhancement above current laboratory records but remains within the theoretical capabilities of ultrashort pulse laser-plasma interactions. Recent experiments have achieved densities approaching $10^{27}$ m$^{-3}$ in small volumes~\cite{Li2010}, suggesting scalability to the required lens dimensions through advanced plasma confinement techniques.
 
 \section{Comprehensive Numerical Implementation}
 
@@ -229,7 +229,7 @@ The 20\% agreement between geodesic and FDTD methods provides confidence in the 
 
 \subsection{Electromagnetic Wave Propagation Confirmation}
 
-Independent FDTD electromagnetic simulation provides crucial validation of the superluminal timing predictions through direct solution of Maxwell's equations. The enhanced computational grid (6000 × 3000 cells) with optimized Courant factor enables accurate wave propagation modeling over the full 1.2 km baseline.
+Independent FDTD electromagnetic simulation provides crucial validation of the superluminal timing predictions through direct solution of Maxwell's equations. The enhanced computational grid (6000 $\times$ 3000 cells) with optimized Courant factor enables accurate wave propagation modeling over the full 1.2 km baseline.
 
 \begin{figure*}[t]
     \centering
@@ -245,7 +245,7 @@ Comprehensive analysis confirms strict adherence to all general relativistic ene
 \begin{figure*}[t]
     \centering
     \includegraphics[width=1.0\textwidth]{energy_conditions.png}
-    \caption{\textbf{Energy Condition Compliance Heat-Map Analysis.} ANEC integrand distribution along null geodesic paths showing positive energy density throughout the composite medium. Component breakdown shows QED electromagnetic (+1.44×10$^{-3}$), plasma matter (+1.64×10$^{-4}$), and warp geometry (+4.29×10$^{-28}$) contributions. Total ANEC integral: +0.002 J m$^{-3}$ s > 0.}
+    \caption{\textbf{Energy Condition Compliance Heat-Map Analysis.} ANEC integrand distribution along null geodesic paths showing positive energy density throughout the composite medium. Component breakdown shows QED electromagnetic (+1.44$\times$10$^{-3}$), plasma matter (+1.64$\times$10$^{-4}$), and warp geometry (+4.29$\times$10$^{-28}$) contributions. Total ANEC integral: +0.002 J m$^{-3}$ s > 0.}
     \label{fig:energy_conditions}
 \end{figure*}
 
@@ -343,7 +343,7 @@ Comprehensive numerical validation ensures the robustness and accuracy of all co
 
 \subsubsection{Grid Convergence Analysis}
 
-Resolution studies across factors 0.5×, 1×, and 2× baseline resolution demonstrate exceptional numerical stability with <0.001\% variation, confirming results are not computational artifacts.
+Resolution studies across factors 0.5$\times$, 1$\times$, and 2$\times$ baseline resolution demonstrate exceptional numerical stability with <0.001\% variation, confirming results are not computational artifacts.
 
 \begin{figure*}[t]
     \centering
@@ -390,7 +390,7 @@ The practical implementation of the QED-Meta-de Sitter Warp Stack requires capab
 
 \subsubsection{Plasma Metamaterial Engineering}
 
-\textbf{Electron Density Achievement:} The required $n_e = 3.5 \times 10^{27}$ m$^{-3}$ represents 3.5× enhancement above current laboratory records. Recent experiments have achieved densities approaching $10^{27}$ m$^{-3}$ in small volumes using ultrashort pulse laser-plasma interactions~\cite{Li2010}.
+\textbf{Electron Density Achievement:} The required $n_e = 3.5 \times 10^{27}$ m$^{-3}$ represents 3.5$\times$ enhancement above current laboratory records. Recent experiments have achieved densities approaching $10^{27}$ m$^{-3}$ in small volumes using ultrashort pulse laser-plasma interactions~\cite{Li2010}.
 
 \textbf{Spatial Control and Uniformity:} The 480 m lens aperture requires precise electron density control over macroscopic dimensions. This represents a significant scaling challenge but may be achievable through:
 \begin{itemize}
@@ -764,9 +764,9 @@ Since $\omega_p > \omega$, the plasma exhibits negative permittivity $\epsilon <
 Numerical stability was verified through systematic grid refinement studies. The baseline computational grid uses 96,000 spatial points over the 1.2 km baseline, providing 1.25 cm resolution. Convergence testing employed three resolution levels:
 
 \begin{itemize}
-    \item \textbf{Coarse (0.5×):} 48,000 points, 2.5 cm resolution
-    \item \textbf{Standard (1×):} 96,000 points, 1.25 cm resolution  
-    \item \textbf{Fine (2×):} 192,000 points, 0.625 cm resolution
+    \item \textbf{Coarse (0.5$\times$):} 48,000 points, 2.5 cm resolution
+    \item \textbf{Standard (1$\times$):} 96,000 points, 1.25 cm resolution  
+    \item \textbf{Fine (2$\times$):} 192,000 points, 0.625 cm resolution
 \end{itemize}
 
 Early arrival time results:
@@ -782,7 +782,7 @@ The relative variation $|\delta t_{\text{fine}} - \delta t_{\text{coarse}}|/\del
 
 The finite-difference time-domain electromagnetic simulation employs the Yee algorithm with enhanced stability provisions:
 
-\textbf{Spatial Discretization:} $\Delta x = 20$ cm, $\Delta y = 20$ cm over a 6000 × 3000 computational grid spanning the full 1.2 km baseline with 600 m transverse coverage.
+\textbf{Spatial Discretization:} $\Delta x = 20$ cm, $\Delta y = 20$ cm over a 6000 $\times$ 3000 computational grid spanning the full 1.2 km baseline with 600 m transverse coverage.
 
 \textbf{Temporal Discretization:} Courant factor $C = c\Delta t/\Delta x = 0.4$ ensuring numerical stability with $\Delta t = 2.67 \times 10^{-10}$ s.
 
