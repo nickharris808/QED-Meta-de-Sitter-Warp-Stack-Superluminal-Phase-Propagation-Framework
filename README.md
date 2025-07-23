@@ -1,4 +1,13 @@
 # QED-Meta-de Sitter Warp Stack: Superluminal Phase Propagation Framework
+Absolutely! Here are a few ways to add more emphasis and make the link stand out. You can use a combination of **bold**, emojis, and clear instructions:
+
+---
+
+
+[👉 **CLICK HERE for the Full Article**](https://drive.google.com/file/d/1pZTi-enZeuzirFyr9irezYvEtAM7De2O/view?usp=sharing)
+*(Google Drive PDF — opens in new tab)*
+
+
 ## 🌌 **Overview**
 
 Complete theoretical framework and experimental validation for achieving **superluminal electromagnetic phase propagation** through engineered composite media. This approach combines quantum electrodynamics, plasma metamaterials, and positive-energy geometry while respecting all relativistic constraints.
