@@ -265,10 +265,10 @@ def run_experiment():
     print(f"   {'Total uncertainty':18s}: {total_std:6.3f} ps")
     
     # Create comprehensive visualization
-    fig = plt.figure(figsize=(15, 10))
+    fig = plt.figure(figsize=(12, 8))
     
-    # Plot 1: Tornado chart (normalized sensitivities)
-    ax1 = plt.subplot(2, 3, 1)
+    # MAIN PLOT: Tornado chart (normalized sensitivities)
+    ax1 = plt.subplot(1, 1, 1)  # Make it the only plot for now
     # Sort normalized sensitivities by absolute value
     sorted_norm_sens = sorted(normalized_sensitivities.items(), key=lambda x: abs(x[1]), reverse=True)
     labels = [param_labels[k] for k, v in sorted_norm_sens]
@@ -287,106 +287,7 @@ def run_experiment():
         width = bar.get_width()
         ax1.text(width + np.sign(width) * 0.02 * max(np.abs(values)) if len(values) > 0 else 0, 
                 bar.get_y() + bar.get_height()/2, 
-                f'{value:.1f}%', ha='left' if width > 0 else 'right', va='center', fontsize=8)
-    
-    # Plot 2: Relative importance pie chart
-    ax2 = plt.subplot(2, 3, 2)
-    importance_values = [rel_importance[k] for k, v in sorted_sens]
-    importance_labels = [param_labels[k] for k, v in sorted_sens]
-    
-    wedges, texts, autotexts = ax2.pie(importance_values, labels=importance_labels, 
-                                      autopct='%1.1f%%', startangle=90)
-    ax2.set_title('Relative Parameter Importance')
-    
-    # Plot 3: Uncertainty contributions
-    ax3 = plt.subplot(2, 3, 3)
-    unc_labels = [param_labels[k] for k in sorted(variance_contributions.keys(), 
-                                                 key=lambda k: variance_contributions[k], reverse=True)]
-    unc_values = [np.sqrt(variance_contributions[k]) for k in sorted(variance_contributions.keys(), 
-                                                                   key=lambda k: variance_contributions[k], reverse=True)]
-    
-    bars = ax3.bar(range(len(unc_labels)), unc_values, alpha=0.7, color='green')
-    ax3.set_xticks(range(len(unc_labels)))
-    ax3.set_xticklabels(unc_labels, rotation=45, ha='right')
-    ax3.set_ylabel('Uncertainty Contribution (ps)')
-    ax3.set_title('Uncertainty Budget')
-    ax3.grid(True, alpha=0.3, axis='y')
-    
-    # Plot 4: 2D parameter sweep (most important parameters)
-    ax4 = plt.subplot(2, 3, 4)
-    top_params = [k for k, v in sorted_sens[:2]]  # Two most important parameters
-    
-    if len(top_params) >= 2:
-        param1, param2 = top_params[0], top_params[1]
-        
-        # Define sweep ranges (±20% around baseline)
-        ranges = {}
-        for p in [param1, param2]:
-            base_val = base_params[p]
-            ranges[p] = (base_val * 0.8, base_val * 1.2)
-        
-        X, Y, Z = parameter_sweep_2d(base_params, param1, param2, ranges, n_points=30)
-        
-        contour = ax4.contour(X, Y, Z, levels=15, colors='black', alpha=0.4, linewidths=0.5)
-        contour_f = ax4.contourf(X, Y, Z, levels=15, cmap='RdYlBu_r', alpha=0.8)
-        ax4.plot(base_params[param1], base_params[param2], 'ko', markersize=8, 
-                label=f'Baseline ({baseline_advance:.3f} ps)')
-        
-        ax4.set_xlabel(param_labels[param1])
-        ax4.set_ylabel(param_labels[param2])
-        ax4.set_title(f'Early Arrival vs {param_labels[param1]} & {param_labels[param2]}')
-        ax4.legend()
-        
-        # Add colorbar
-        cbar = plt.colorbar(contour_f, ax=ax4)
-        cbar.set_label('Early Arrival (ps)')
-    
-    # Plot 5: Parameter correlation matrix (simplified)
-    ax5 = plt.subplot(2, 3, 5)
-    
-    # Calculate correlation matrix based on sensitivities
-    sens_array = np.array([sensitivities[p] for p in param_list])
-    corr_matrix = np.outer(sens_array, sens_array) / (np.outer(np.abs(sens_array), np.abs(sens_array)) + 1e-12)
-    
-    im = ax5.imshow(corr_matrix, cmap='RdBu_r', vmin=-1, vmax=1)
-    ax5.set_xticks(range(len(param_list)))
-    ax5.set_yticks(range(len(param_list)))
-    ax5.set_xticklabels([param_labels[p] for p in param_list], rotation=45, ha='right')
-    ax5.set_yticklabels([param_labels[p] for p in param_list])
-    ax5.set_title('Parameter Sensitivity Correlation')
-    
-    # Add text annotations
-    for i in range(len(param_list)):
-        for j in range(len(param_list)):
-            text = ax5.text(j, i, f'{corr_matrix[i, j]:.2f}', 
-                           ha="center", va="center", color="black", fontsize=8)
-    
-    plt.colorbar(im, ax=ax5)
-    
-    # Plot 6: Optimization landscape (1D cuts)
-    ax6 = plt.subplot(2, 3, 6)
-    
-    # Show how early arrival varies with most important parameter
-    most_important = sorted_sens[0][0]
-    base_val = base_params[most_important]
-    param_range = np.linspace(base_val * 0.5, base_val * 1.5, 100)
-    
-    advances = []
-    for val in param_range:
-        params = base_params.copy()
-        params[most_important] = val
-        advances.append(early_arrival(**params) * 1e12)
-    
-    ax6.plot(param_range, advances, 'b-', linewidth=2)
-    ax6.axvline(base_val, color='red', linestyle='--', 
-               label=f'Baseline ({baseline_advance:.3f} ps)')
-    ax6.axhline(baseline_advance, color='red', linestyle='--', alpha=0.5)
-    
-    ax6.set_xlabel(param_labels[most_important])
-    ax6.set_ylabel('Early Arrival (ps)')
-    ax6.set_title(f'Optimization Landscape: {param_labels[most_important]}')
-    ax6.legend()
-    ax6.grid(True, alpha=0.3)
+                f'{value:.1f}%', ha='left' if width > 0 else 'right', va='center', fontsize=10)
     
     plt.tight_layout()
     plt.savefig('experiment4_parameter_sensitivity.png', dpi=300, bbox_inches='tight')
