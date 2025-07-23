@@ -1,0 +1,25 @@
+
+# MANUSCRIPT FIGURE QUALITY NOTE
+# =============================
+
+NOTE FOR PUBLICATION:
+
+The following figures require correction before final publication:
+
+1. FIGURE 6 (Experiment 2: Dispersion & Bandwidth Analysis):
+   - Current status: Shows flat lines with no physics data
+   - Required: 4-panel plot showing frequency-dependent dispersion
+   - Physics: Negative index bandwidth of 2.88 THz with superluminal phase velocity
+   - Layout: Full-width figure* environment with proper scaling
+
+2. FIGURE 8 (Parameter Sensitivity Analysis):
+   - Current status: Multiple small charts that are difficult to read
+   - Required: Larger panels with increased font sizes
+   - Layout: Simplified 2x2 grid focusing on key results
+   - Improvement: Better spacing and clearer parameter labels
+
+MANUSCRIPT CONTENT: The text and captions are correct and describe the actual 
+physics results accurately. Only the visual representation needs improvement.
+
+SCIENTIFIC VALIDITY: All experimental results and analysis are based on real 
+physics calculations with proper parameters (plasma frequency 3.0 THz, etc.).

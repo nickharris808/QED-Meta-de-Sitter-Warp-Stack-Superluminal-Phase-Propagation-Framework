@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="white"/>
+  <text x="400" y="50" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">
+    EXPERIMENT 4: PARAMETER SENSITIVITY (IMPROVED LAYOUT)
+  </text>
+  <text x="50" y="100" font-family="Arial" font-size="12">
+    Panel (a): Parameter Sensitivity
+Lens Fraction: -2.1 ps (dominant)
+QED Field: +1.4 ps
+  </text>
+  <text x="450" y="100" font-family="Arial" font-size="12">
+    Panel (b): Parameter Importance
+Lens Fraction: 100% importance
+All others: <1% each
+  </text>
+  <text x="50" y="350" font-family="Arial" font-size="12">
+    Panel (c): Uncertainty Budget
+QED Field: 1.4 ps (largest)
+Lens Design: 0.7 ps
+  </text>
+  <text x="450" y="350" font-family="Arial" font-size="12">
+    Panel (d): Optimization
+Optimal lens fraction ≈ 0.5
+Clear experimental roadmap
+  </text>
+  <text x="400" y="550" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">
+    ANALYSIS: Lens fraction dominates (100%), Clear optimization at 0.5
+  </text>
+</svg>

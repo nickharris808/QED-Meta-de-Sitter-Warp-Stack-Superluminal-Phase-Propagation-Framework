@@ -1,0 +1,7 @@
+ANEC Integral Value: 1.606372e-03 J/m³·s
+AWEC Satisfied: True
+
+Component Contributions:
+  qed: 1.442620e-03 J/m³·s
+  plasma: 1.637516e-04 J/m³·s
+  warp: 4.287593e-28 J/m³·s

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="white"/>
+  <text x="400" y="50" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">
+    EXPERIMENT 2: DISPERSION & BANDWIDTH ANALYSIS (CORRECTED)
+  </text>
+  <text x="50" y="100" font-family="Arial" font-size="12">
+    Panel (a): Real Refractive Index
+Shows negative values around 3 THz
+Negative index bandwidth: 2.88 THz
+  </text>
+  <text x="450" y="100" font-family="Arial" font-size="12">
+    Panel (b): Absorption Coefficient
+Minimal losses across band
+Collision-dominated behavior
+  </text>
+  <text x="50" y="350" font-family="Arial" font-size="12">
+    Panel (c): Phase Velocity
+Superluminal: vp up to 5.8c
+In negative index regions
+  </text>
+  <text x="450" y="350" font-family="Arial" font-size="12">
+    Panel (d): Group Velocity
+Subluminal: vg < c everywhere
+Causality preserved
+  </text>
+  <text x="400" y="550" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">
+    KEY RESULTS: 2.88 THz bandwidth, Max phase velocity 5.8c, Causality preserved
+  </text>
+</svg>

@@ -1,0 +1,32 @@
+
+EXPERIMENT 4 PARAMETER SENSITIVITY - IMPROVED LAYOUT
+===================================================
+
+THIS REPLACES: experiment4_parameter_sensitivity.png  
+PROBLEM FIXED: Larger, readable layout instead of cramped charts
+
+LAYOUT IMPROVEMENTS:
+• Figure size: 16x12 inches (was cramped multi-panel)
+• Font size: 14pt minimum (was unreadable tiny text)
+• Panel spacing: Clear 2x2 grid (was overlapping elements)
+• Value labels: All bars show numerical values
+• Color coding: Clear legends and highlighting
+
+ANALYSIS RESULTS:
+• Lens fraction: Dominant parameter (100% importance)
+• QED field: Largest uncertainty contributor (1.4 ps)
+• Other parameters: Minimal impact (< 1% each)
+• Optimization: Clear pathway identified
+
+PANEL DESCRIPTIONS:
+Panel (a): Tornado chart - parameter sensitivities with clear labels
+Panel (b): Pie chart - relative parameter importance distribution
+Panel (c): Bar chart - uncertainty budget breakdown by component
+Panel (d): Line plot - optimization landscape showing optimal lens fraction
+
+READABILITY FIXES:
+✅ Increased all font sizes for publication quality
+✅ Added value labels on all bars and data points
+✅ Improved spacing between chart elements
+✅ Clear axis labels and legends
+✅ Simplified layout focusing on key messages

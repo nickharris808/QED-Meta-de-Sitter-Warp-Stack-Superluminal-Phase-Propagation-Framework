@@ -1,0 +1,46 @@
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║               EXPERIMENT 4: PARAMETER SENSITIVITY ANALYSIS                   ║
+║                         [IMPROVED LAYOUT NEEDED]                             ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────┬─────────────────────────────────┐
+│  (a) Parameter Sensitivity      │  (b) Parameter Importance       │
+│      Tornado Chart              │      Distribution               │
+│                                 │                                 │
+│  Lens Fraction     ████████████▌│         ╭───────────╮           │
+│  Corridor Length   ██████▌      │         │           │           │
+│  QED Field         ████▌        │         │   Lens    │           │
+│  Metamaterial Δn   ██▌          │         │ Fraction  │ 100%      │
+│  Warp Amplitude    ▌            │         │  (100%)   │           │
+│                                 │         ╰───────────╯           │
+│  Sensitivity: -2 to +2 ps/param │         Other params negligible │
+├─────────────────────────────────┼─────────────────────────────────┤
+│  (c) Uncertainty Budget         │  (d) Optimization Landscape     │
+│                                 │                                 │
+│  1.4 ┤ ████████ QED Field      │  Early  ╱╲                     │
+│  1.2 ┤                         │  Arrival╱  ╲ Optimal region     │
+│  1.0 ┤ ████ Lens Design        │  (ps)  ╱    ╲                   │
+│  0.8 ┤                         │   -1.0 ╱      ╲                 │
+│  0.6 ┤ ██ Metamaterial         │   -1.2 ╱        ╲               │
+│  0.4 ┤                         │   -1.4 ╱          ╲             │
+│  0.2 ┤ ▌ Other parameters      │   -1.6 ╱            ╲           │
+│  0.0 ┤                         │        0.25  0.5  0.75          │
+│      Contribution (ps)          │        Lens Fraction             │
+└─────────────────────────────────┴─────────────────────────────────┘
+
+🎯 KEY SENSITIVITY RESULTS:
+   • Lens fraction dominates (100% of parameter importance)
+   • Optimal lens fraction: ~0.5 for maximum early arrival
+   • Uncertainty budget: QED field contributes most uncertainty
+   • Other parameters have minimal impact on timing performance
+
+❌ CURRENT PROBLEM: Charts too small, text unreadable, cramped layout
+✅ NEEDED: Larger panels, bigger fonts, clearer spacing
+
+IMPROVEMENTS:
+1. Increase figure size from cramped multi-panel to readable 2x2 grid
+2. Use larger fonts (minimum 12pt) for all text
+3. Simplify each panel to focus on single key message
+4. Add clear value labels on all bars and charts
+5. Improve color coding and legends for clarity

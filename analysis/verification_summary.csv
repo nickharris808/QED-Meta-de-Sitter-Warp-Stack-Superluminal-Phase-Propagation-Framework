@@ -1,0 +1,20 @@
+Component,Claimed_Physics,Actual_Implementation,Verification_Status,Notes
+Physical_Constants,CODATA_2018,CODATA_2018,VERIFIED,All fundamental constants correct
+Geodesic_Calculator,Einstein_Field_Equations,Geometric_optics_approximation,SIMPLIFIED,Uses n(x)/c integration not full GR
+Refractive_Index_QED,Heisenberg-Euler_formula,Phenomenological_scaling,PHENOMENOLOGICAL,Uses -2e-7 factor not derived formula
+Refractive_Index_Meta,Metamaterial_theory,Direct_deltaV_assignment,VALID,Uses -2e-6 main effect
+Refractive_Index_Warp,de_Sitter_metric,Gaussian_profile,PHENOMENOLOGICAL,No actual metric engineering
+FDTD_Simulation,Maxwell_equations,Yee_algorithm,CORRECT,Standard electromagnetic FDTD
+Energy_Conditions,ANEC_integral,T_kk_integration,MATHEMATICALLY_CORRECT,For given stress-energy components
+Stress_Energy_QED,Full_EM_tensor,Simplified_with_factors,SIMPLIFIED,Uses arbitrary 0.1 scaling factors
+Stress_Energy_Plasma,Perfect_fluid,Dust_approximation,VALID,T_tx=0 for dust
+Stress_Energy_Warp,Exotic_matter,Tiny_positive_energy,ARTIFICIAL,1e-30 scaling to ensure positivity
+Plasma_Dielectric,Drude_model,Standard_plasma_formula,CORRECT,epsilon = 1 - (omega_p/omega)^2
+Phase_Control,Quantum_networks,Independent_Gaussian_noise,SIMPLIFIED,Assumes statistical independence
+Early_Arrival_2.82ps,Theoretical_estimate,Numerical_integration,CONSISTENT,Matches expected ~2.7ps calculation
+FDTD_Arrival_3.34ps,EM_wave_propagation,Pulse_detection,REASONABLE,18% difference from geodesic explainable
+ANEC_Positive,Energy_condition_compliance,Numerical_integration,SATISFIED,+1.61e-3 J/m³·s > 0
+Negative_Index_100%,Plasma_frequency_condition,omega_p_greater_omega,CORRECT,333 THz > 100 THz at mid-IR
+Phase_Error_32.6fs,Quantum_sync_capability,Monte_Carlo_statistics,OPTIMISTIC,Assumes advanced technology
+Memory_Usage,Original_68GB,Optimized_200MB,FIXED,Streaming computation and array cleanup
+Computational_Speed,Hours_runtime,45_seconds,OPTIMIZED,Reduced grid sizes and efficient algorithms 

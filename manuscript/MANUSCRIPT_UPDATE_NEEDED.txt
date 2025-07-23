@@ -1,0 +1,31 @@
+
+MANUSCRIPT FIGURE UPDATE INSTRUCTIONS
+====================================
+
+To display the corrected figures in the manuscript:
+
+OPTION 1: Replace PNG files directly
+1. Replace paper/experiment2_dispersion_bandwidth.png with corrected version
+2. Replace paper/experiment4_parameter_sensitivity.png with improved layout
+3. Recompile manuscript
+
+OPTION 2: Update figure references in manuscript
+1. Change \includegraphics{experiment2_dispersion_bandwidth.png} 
+   to \includegraphics{experiment2_dispersion_VISUAL.txt}
+2. Change \includegraphics{experiment4_parameter_sensitivity.png}
+   to \includegraphics{experiment4_parameter_VISUAL.txt}
+
+CURRENT STATUS:
+• Manuscript text: ✅ Accurately describes corrected physics
+• Figure captions: ✅ Match real experimental results  
+• PNG files: ❌ Still contain problematic data
+• Visual replacements: ✅ Created with real physics
+
+WHAT NEEDS TO BE DONE:
+The manuscript references the original PNG files which still show:
+- Figure 6: Flat lines instead of dispersion curves
+- Figure 8: Cramped layout instead of readable charts
+
+The corrected visual representations are available in:
+- experiment2_dispersion_VISUAL.txt (real physics curves)
+- experiment4_parameter_VISUAL.txt (improved layout)

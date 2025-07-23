@@ -1,0 +1,7 @@
+parameter,value,unit,target,status
+early_arrival_ps,2.8163526444305242,ps,>5,❌
+fdtd_confirmation_ps,3.335640951981521,ps,>5,❌
+anec_integral,0.001606371833441744,J/m³·s,≥0,✅
+phase_control_success_rate,1.0,%,>90,✅
+lens_effectiveness,1.0,%,>50,✅
+energy_conditions_satisfied,True,boolean,True,✅
