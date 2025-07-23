@@ -4,7 +4,7 @@ Absolutely! Here are a few ways to add more emphasis and make the link stand out
 ---
 
 
-[👉 **CLICK HERE for the Full Article**](https://drive.google.com/file/d/1pZTi-enZeuzirFyr9irezYvEtAM7De2O/view?usp=sharing)
+[👉 **CLICK HERE for the Full Article**](https://drive.google.com/file/d/1AVPIrCynXW_yA00LNxtrave2myHEqdyA/view?usp=drive_link)
 
 
 ## 🌌 **Overview**

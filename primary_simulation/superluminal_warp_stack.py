@@ -54,9 +54,9 @@ class SimulationParameters:
     deltaN: float = -2.2e-6   # refractive index well (ENHANCED to -2.2e-6 for >3ps)
     Lcorr: float = 1200.0     # m (corridor length EXTENDED to 1.2 km)
     E0: float = 2e13          # V/m (laser field strength for 20 PW/cm²)
-    plasma_density: float = 3.5e27  # m^-3 (ENHANCED for stronger negative index)
+    plasma_density: float = 2.0e23  # m^-3 (CORRECTED for realistic negative index - was 3.5e27)
     grid_points: int = 96_000 # INCREASED resolution for 1.2km geodesics
-    target_wavelength: float = 3e-6  # m (mid-IR for negative index)
+    target_wavelength: float = 100e-6  # m (far-IR, 100 μm for negative index below plasma frequency)
 
 class WarpStackSimulator:
     """Main class for running all FTL transport simulations"""
