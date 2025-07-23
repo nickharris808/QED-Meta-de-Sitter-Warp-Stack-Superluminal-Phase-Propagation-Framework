@@ -265,32 +265,55 @@ def run_experiment():
     print(f"   {'Total uncertainty':18s}: {total_std:6.3f} ps")
     
     # Create comprehensive visualization
-    fig = plt.figure(figsize=(12, 8))
+    fig = plt.figure(figsize=(14, 10))  # Larger figure for better visibility
     
     # MAIN PLOT: Tornado chart (normalized sensitivities)
-    ax1 = plt.subplot(1, 1, 1)  # Make it the only plot for now
+    ax1 = plt.subplot(1, 1, 1)
     # Sort normalized sensitivities by absolute value
     sorted_norm_sens = sorted(normalized_sensitivities.items(), key=lambda x: abs(x[1]), reverse=True)
     labels = [param_labels[k] for k, v in sorted_norm_sens]
     values = [v for k, v in sorted_norm_sens]
     colors = ['red' if v < 0 else 'blue' for v in values]
     
+    # Create horizontal bar chart
     bars = ax1.barh(range(len(labels)), values, color=colors, alpha=0.7)
+    
+    # Set y-axis
     ax1.set_yticks(range(len(labels)))
-    ax1.set_yticklabels(labels)
-    ax1.set_xlabel('Normalized Sensitivity (% change per % parameter change)')
-    ax1.set_title('Parameter Sensitivity Tornado Chart')
+    ax1.set_yticklabels(labels, fontsize=12)
+    
+    # Set x-axis
+    ax1.set_xlabel('Normalized Sensitivity (% change per % parameter change)', fontsize=12, fontweight='bold')
+    
+    # Set title
+    ax1.set_title('Parameter Sensitivity Tornado Chart\n(QED-Meta-de Sitter Warp Stack)', fontsize=14, fontweight='bold', pad=20)
+    
+    # Add grid
     ax1.grid(True, alpha=0.3, axis='x')
     
-    # Add value labels
+    # Ensure all labels are visible
+    ax1.margins(y=0.1)
+    
+    # Add value labels on bars
     for i, (bar, value) in enumerate(zip(bars, values)):
         width = bar.get_width()
-        ax1.text(width + np.sign(width) * 0.02 * max(np.abs(values)) if len(values) > 0 else 0, 
-                bar.get_y() + bar.get_height()/2, 
-                f'{value:.1f}%', ha='left' if width > 0 else 'right', va='center', fontsize=10)
+        # Position text label
+        if width >= 0:
+            x_pos = width + max(abs(v) for v in values) * 0.02
+            ha = 'left'
+        else:
+            x_pos = width - max(abs(v) for v in values) * 0.02
+            ha = 'right'
+        
+        ax1.text(x_pos, bar.get_y() + bar.get_height()/2, 
+                f'{value:.1f}%', ha=ha, va='center', fontsize=11, fontweight='bold')
     
-    plt.tight_layout()
-    plt.savefig('experiment4_parameter_sensitivity.png', dpi=300, bbox_inches='tight')
+    # Adjust layout for better spacing
+    plt.tight_layout(pad=3.0)
+    plt.subplots_adjust(left=0.25, right=0.85, top=0.9, bottom=0.15)
+    
+    plt.savefig('experiment4_parameter_sensitivity.png', dpi=300, bbox_inches='tight', 
+                facecolor='white', edgecolor='none')
     plt.close()  # Close instead of show to avoid display issues
     
     # Success criteria and recommendations
