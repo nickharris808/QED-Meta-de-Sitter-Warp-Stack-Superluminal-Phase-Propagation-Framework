@@ -5,7 +5,6 @@ Absolutely! Here are a few ways to add more emphasis and make the link stand out
 
 
 [👉 **CLICK HERE for the Full Article**](https://drive.google.com/file/d/1pZTi-enZeuzirFyr9irezYvEtAM7De2O/view?usp=sharing)
-*(Google Drive PDF — opens in new tab)*
 
 
 ## 🌌 **Overview**
