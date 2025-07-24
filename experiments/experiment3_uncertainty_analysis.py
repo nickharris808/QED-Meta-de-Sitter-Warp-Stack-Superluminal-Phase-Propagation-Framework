@@ -185,8 +185,8 @@ def run_experiment():
     for param, value in sorted(sens.items(), key=lambda x: abs(x[1]), reverse=True):
         print(f"   ∂Δt/∂{param}: {value*1e12:.2e} ps per unit {param}")
     
-    # Create comprehensive figure
-    fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(12, 10))
+    # Create simplified figure with only Monte Carlo Distribution and Q-Q Plot
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
     
     # Plot 1: Histogram of early arrival times
     ax1.hist(advances_ps, bins=60, density=True, alpha=0.7, color='skyblue', 
@@ -215,50 +215,6 @@ def run_experiment():
     ax2.legend()
     ax2.grid(True, alpha=0.3)
     
-    # Plot 3: Sensitivity tornado chart
-    param_labels = {'dn': 'Δn', 'frac': 'Lens Fraction', 'L': 'Length'}
-    labels = [param_labels[k] for k in sens.keys()]
-    values = [sens[k] * 1e12 for k in sens.keys()]
-    
-    # Sort by absolute value
-    sorted_items = sorted(zip(labels, values), key=lambda x: abs(x[1]), reverse=True)
-    labels_sorted, values_sorted = zip(*sorted_items)
-    
-    bars = ax3.barh(labels_sorted, values_sorted, color=['red', 'blue', 'green'])
-    ax3.set_xlabel('Sensitivity (ps per unit parameter)')
-    ax3.set_ylabel('Parameter')
-    ax3.set_title('Parameter Sensitivity (Tornado Chart)')
-    ax3.grid(True, alpha=0.3, axis='x')
-    
-    # Add value labels on bars
-    for bar, value in zip(bars, values_sorted):
-        width = bar.get_width()
-        ax3.text(width + 0.02 * max(np.abs(values_sorted)), bar.get_y() + bar.get_height()/2, 
-                f'{value:.2e}', ha='left', va='center', fontsize=9)
-    
-    # Plot 4: Convergence test
-    sample_sizes = np.logspace(1, 4, 20).astype(int)
-    running_means = []
-    running_stds = []
-    
-    for n in sample_sizes:
-        if n <= len(advances_ps):
-            running_means.append(np.mean(advances_ps[:n]))
-            running_stds.append(np.std(advances_ps[:n]))
-        else:
-            running_means.append(np.nan)
-            running_stds.append(np.nan)
-    
-    ax4.semilogx(sample_sizes, running_means, 'b-', linewidth=2, label='Mean')
-    ax4.semilogx(sample_sizes, running_stds, 'r-', linewidth=2, label='Std Dev')
-    ax4.axhline(mean_advance, color='blue', linestyle='--', alpha=0.7)
-    ax4.axhline(std_advance, color='red', linestyle='--', alpha=0.7)
-    ax4.set_xlabel('Sample Size')
-    ax4.set_ylabel('Statistics (ps)')
-    ax4.set_title('Monte Carlo Convergence')
-    ax4.legend()
-    ax4.grid(True, alpha=0.3)
-    
     plt.tight_layout()
     plt.savefig('experiment3_monte_carlo_uncertainty.png', dpi=300, bbox_inches='tight')
     plt.close()  # Close instead of show to avoid display issues
@@ -284,6 +240,7 @@ def run_experiment():
         print(f"   ⚠️  Wide confidence interval: {ci_width_percent:.1f}% of mean")
     
     # Dominant parameter identification
+    param_labels = {'dn': 'Δn', 'frac': 'Lens Fraction', 'L': 'Length'}
     dominant_param = max(sens.keys(), key=lambda k: abs(sens[k]))
     dominant_sens = abs(sens[dominant_param])
     total_sens = sum(abs(v) for v in sens.values())

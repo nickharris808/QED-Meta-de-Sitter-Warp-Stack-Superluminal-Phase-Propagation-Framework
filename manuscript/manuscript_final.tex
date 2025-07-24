@@ -1,5 +1,7 @@
 \documentclass[aps,prl,reprint,groupedaddress,floatfix]{revtex4-1}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -31,7 +33,7 @@ The de Sitter Warp Stack—Comprehensive Theoretical Framework and Experimental 
 \date{\today}
 
 \begin{abstract}
-We present a comprehensive theoretical framework and experimental validation suite for achieving superluminal electromagnetic phase propagation through engineered composite media—the \textit{QED-Meta-de Sitter Warp Stack}. This approach combines vacuum birefringence corridors, plasma-based metamaterial lenses, and cosmologically-inspired geometries while maintaining strict compliance with all averaged null energy conditions (ANEC). Our framework comprises two complementary validation approaches: (1) a comprehensive five-simulation physics suite demonstrating $3.67 \pm 0.001$ ps early arrival over 1.2 km baselines with independent finite-difference time-domain confirmation ($4.40$ ps, 20\% agreement), and (2) five targeted experimental validations addressing all major theoretical concerns including causality preservation, energy condition compliance, design robustness, and practical implementation feasibility. The composite metric satisfies ANEC with $\int T_{\mu\nu}k^\mu k^\nu d\lambda = +0.002$ J m$^{-3}$ s $> 0$, requiring no exotic matter. Plasma-based metamaterial components achieve comprehensive negative refractive index coverage at mid-infrared wavelengths with 3.88 THz bandwidth through optimized electron densities of $2.0 \times 10^{23}$ m$^{-3}$. Quantum network phase control demonstrates sub-femtosecond synchronization (32.6 fs RMS) with 100\% reliability across 50,000 Monte Carlo trials. Ten independent validation studies confirm exceptional numerical stability ($<0.001\%$ grid convergence variation), robust parameter performance (coefficient of variation 6.8\%), and theoretical consistency across multiple computational approaches. Group velocity analysis confirms signal envelope velocity $v_g \leq c$ while phase velocity $v_p > c$, preserving relativistic causality constraints. These results establish the first comprehensive framework for controlled superluminal phase propagation with complete experimental validation and practical implementation pathway.
+We present a comprehensive theoretical framework and experimental validation suite for achieving superluminal electromagnetic phase propagation through engineered composite media—the \textit{QED-Meta-de Sitter Warp Stack}. This approach combines vacuum birefringence corridors, plasma-based metamaterial lenses, and cosmologically-inspired geometries while maintaining strict compliance with all averaged null energy conditions (ANEC). Our framework comprises two complementary validation approaches: (1) a comprehensive five-simulation physics suite demonstrating $3.67 \pm 0.001$ ps early arrival over 1.2 km baselines with independent finite-difference time-domain confirmation ($4.40$ ps, 20\% agreement), and (2) five targeted experimental validations addressing all major theoretical concerns including causality preservation, energy condition compliance, design robustness, and practical implementation feasibility. The composite metric satisfies ANEC with $\int T_{\mu\nu}k^\mu k^\nu d\lambda = +0.002$ J m$^{-3}$ s $> 0$, requiring no exotic matter. Plasma-based metamaterial components achieve comprehensive negative refractive index coverage at mid-infrared wavelengths with 3.88 THz bandwidth through optimized electron densities of $2.0 \times 10^{23}$ m$^{-3}$. Quantum network phase control demonstrates sub-femtosecond synchronization (32.6 fs RMS) with 100\% reliability across 50,000 Monte Carlo trials. Ten independent validation studies confirm excellent numerical stability (<1\% grid convergence variation), robust parameter performance (coefficient of variation 6.8\%), and theoretical consistency across multiple computational approaches. Group velocity analysis confirms signal envelope velocity $v_g \leq c$ while phase velocity $v_p > c$, preserving relativistic causality constraints. These results establish the first comprehensive framework for controlled superluminal phase propagation with complete experimental validation and practical implementation pathway.
 \end{abstract}
 
 \maketitle
@@ -348,7 +350,7 @@ Resolution studies across factors 0.5$\times$, 1$\times$, and 2$\times$ baseline
 \begin{figure*}[t]
     \centering
     \includegraphics[width=1.0\textwidth]{grid_convergence_study.png}
-    \caption{\textbf{Grid Convergence Analysis and Numerical Stability Verification.} (a) Early arrival time vs. grid resolution showing convergence to stable value. (b) Relative error analysis demonstrating <0.001\% variation across resolution factors. (c) Computational cost vs. accuracy trade-off analysis. (d) Extrapolation to infinite resolution confirming numerical stability. Results verify that superluminal timing predictions are not computational artifacts but represent genuine physical effects.}
+    \caption{\textbf{Grid Convergence Analysis and Numerical Stability Verification.} (a) Early arrival time vs. grid resolution showing convergence to stable value. (b) Relative error analysis demonstrating <1\% variation across resolution factors. (c) Computational cost vs. accuracy trade-off analysis. (d) Extrapolation to infinite resolution confirming numerical stability. Results verify that superluminal timing predictions are not computational artifacts but represent genuine physical effects.}
     \label{fig:convergence_study}
 \end{figure*}
 
@@ -667,7 +669,7 @@ We have presented a comprehensive theoretical framework and complete experimenta
 
 \textbf{Technological Feasibility:} Demonstration that all required capabilities are within current or near-term technological reach, with clear implementation pathway and cost analysis for experimental demonstration.
 
-\textbf{Numerical Robustness:} Exceptional numerical stability (<0.001\% grid convergence variation) and parameter robustness (coefficient of variation 6.8\%) confirming results are not computational artifacts or fine-tuning dependent.
+\textbf{Numerical Robustness:} Excellent numerical stability (<1\% grid convergence variation) and parameter robustness (coefficient of variation 6.8\%) confirming results are not computational artifacts or fine-tuning dependent.
 
 \subsection{Scientific Significance}
 
@@ -776,7 +778,7 @@ Early arrival time results:
     \item Fine: $\delta t = 3.6703$ ps
 \end{itemize}
 
-The relative variation $|\delta t_{\text{fine}} - \delta t_{\text{coarse}}|/\delta t_{\text{standard}} = 2.7 \times 10^{-6} < 0.001\%$ confirms exceptional numerical convergence.
+The relative variation shows maximum changes of 0.91\% for FDTD and 0.11\% for geodesic methods, confirming excellent numerical convergence well below the 3\% threshold.
 
 \subsubsection{FDTD Implementation Details}
 

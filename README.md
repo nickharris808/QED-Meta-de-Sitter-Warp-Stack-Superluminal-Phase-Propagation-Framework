@@ -117,7 +117,7 @@ qed-meta-sitter-warp-stack/
 - **Operating wavelength**: λ = 3 μm (mid-infrared)
 
 ### **Validation Results**
-- **Grid convergence**: <0.001% variation across resolution factors
+- **Grid convergence**: <1% variation across resolution factors (excellent stability)
 - **Multi-method agreement**: 20% between geodesic and FDTD methods
 - **Parameter robustness**: CV = 6.8% across fabrication tolerances
 - **Energy compliance**: ANEC = +0.002 J/m³·s > 0 (all trajectories)
@@ -205,7 +205,7 @@ brew install --cask mactex
 | Negative Index Bandwidth | 3.88 THz | Broadband operation |
 | Phase Control Precision | 32.6 fs RMS | Quantum network ready |
 | Parameter Robustness | CV = 6.8% | Fabrication tolerant |
-| Grid Convergence | <0.001% | Numerically stable |
+| Grid Convergence | <1% | Numerically stable |
 
 ---
 

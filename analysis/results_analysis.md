@@ -43,8 +43,8 @@ Our comprehensive simulation suite has successfully demonstrated **superluminal 
 ## 🔬 **VALIDATION STUDY RESULTS**
 
 ### 1. **Grid Convergence Analysis**
-- **Maximum Variation**: <0.001% across resolution factors
-- **Convergence Criterion**: <3% required, achieved 300× better
+- **Maximum Variation**: <1% across resolution factors
+- **Convergence Criterion**: <3% required, achieved with ~1% maximum variation
 - **Numerical Stability**: Exceptional - results are not computational artifacts
 
 ### 2. **Parameter Sweep Robustness**
@@ -76,7 +76,7 @@ Our comprehensive simulation suite has successfully demonstrated **superluminal 
    - Timing precision measurable with existing photodetectors
 
 4. **Numerical Methods are Robust**
-   - Results converged to <0.001% precision
+   - Results converged to <1% precision
    - Parameter variations show excellent stability
    - Independent electromagnetic confirmation
 
@@ -216,7 +216,7 @@ Claims of **true faster-than-light communication** or **practical warp drives** 
 "**Engineered metamaterials enable superluminal phase propagation while respecting all fundamental physics constraints, opening pathways to advanced electromagnetic technologies.**"
 
 ### **Evidence Base**
-- Numerical convergence: <0.001% variation
+- Numerical convergence: <1% variation
 - Parameter robustness: 13.9% coefficient of variation  
 - Independent method confirmation: Geodesic + FDTD agreement
 - Energy condition compliance: Positive ANEC integral

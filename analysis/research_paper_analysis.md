@@ -14,7 +14,7 @@ We demonstrate superluminal electromagnetic phase propagation through a composit
 - **Energy condition compliance**: ∫ T_μν k^μ k^ν dλ = +1.61 × 10⁻³ J m⁻³ s⁻¹ > 0
 - **100% negative index coverage** at mid-infrared wavelengths (3.5 × 10²⁷ m⁻³ plasma density)
 - **32.6 fs RMS phase control** with 100% reliability (quantum networks)
-- **Exceptional numerical stability**: <0.001% grid convergence variation
+- **Excellent numerical stability**: <1% grid convergence variation
 - **Parameter robustness**: 13.9% coefficient of variation across 180 configurations
 
 These results establish a pathway toward precision electromagnetic engineering applications while respecting fundamental causality constraints through phase-velocity rather than signal-velocity enhancement.
@@ -131,7 +131,7 @@ All components designed to maintain positive energy density.
 **Grid Convergence Testing:**
 - Resolution factors: 0.5×, 1×, 2×
 - Requirement: <3% variation
-- **Achievement**: <0.001% variation (300× better)
+- **Achievement**: <1% variation (3× better than required threshold)
 
 **Parameter Robustness Analysis:**
 - 180 parameter combinations tested
@@ -284,7 +284,7 @@ We have demonstrated that **composite electromagnetic engineering** combining QE
 
 **Key Quantitative Results:**
 - **2.8 ps early arrival** over kilometer baselines
-- **<0.001% numerical convergence** (exceptional stability)
+- **<1% numerical convergence** (excellent stability)
 - **13.9% parameter robustness** (not fine-tuned)
 - **+1.61×10⁻³ J m⁻³ s⁻¹ ANEC integral** (causality protected)
 
@@ -357,7 +357,7 @@ The **QED-Meta-de Sitter Warp Stack** represents a **significant advance in meta
 ## Supplementary Material
 
 ### A. Numerical Convergence Analysis
-Complete grid-convergence studies demonstrate exceptional numerical stability across all resolution factors with maximum variations <0.001%.
+Complete grid-convergence studies demonstrate excellent numerical stability across all resolution factors with maximum variations <1%, well below the 3% threshold.
 
 ### B. Parameter Space Analysis  
 Comprehensive parameter sweeps across 180 combinations reveal robust performance with smooth parameter dependence and no fine-tuning artifacts.
